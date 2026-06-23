@@ -1,6 +1,7 @@
 import React from 'react'
 import ExternalLink from './ExternalLink';
 
+
 const Critiques = () => {
     const constants = [
       {
