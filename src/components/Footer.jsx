@@ -1,5 +1,4 @@
 import React from 'react'
-import ExternalLink from './Externallink';
 
 const Footer = () => {
   return (
