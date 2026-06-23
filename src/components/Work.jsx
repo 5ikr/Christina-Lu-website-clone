@@ -1,7 +1,6 @@
-import React from 'react'
+import React from "react";
 
 const Work = () => {
-
   const constants = [
     {
       id: "bank-of-america",
@@ -15,7 +14,9 @@ const Work = () => {
       description:
         "Redesigned Bank of America's online banking by simplifying payment flows, consolidating information, and adapting Material Design 3 for clarity and consistency.",
       assetUrl:
-        "https://framerusercontent.com/images/owMyLps0dafLKOc2Bcgmb9WRjE.jpg?scale-down-to=512&width=5400&height=4320 512w,https://framerusercontent.com/images/owMyLps0dafLKOc2Bcgmb9WRjE.jpg?scale-down-to=1024&width=5400&height=4320 1024w,https://framerusercontent.com/images/owMyLps0dafLKOc2Bcgmb9WRjE.jpg?scale-down-to=2048&width=5400&height=4320 2048w,https://framerusercontent.com/images/owMyLps0dafLKOc2Bcgmb9WRjE.jpg?scale-down-to=4096&width=5400&height=4320 4096w,https://framerusercontent.com/images/owMyLps0dafLKOc2Bcgmb9WRjE.jpg?width=5400&height=4320 5400w",
+        "https://framerusercontent.com/images/owMyLps0dafLKOc2Bcgmb9WRjE.jpg?scale-down-to=512 512w, https://framerusercontent.com/images/owMyLps0dafLKOc2Bcgmb9WRjE.jpg?scale-down-to=1024 1024w, https://framerusercontent.com/images/owMyLps0dafLKOc2Bcgmb9WRjE.jpg?scale-down-to=2048 2048w",
+      assetFallback:
+        "https://framerusercontent.com/images/owMyLps0dafLKOc2Bcgmb9WRjE.jpg?scale-down-to=1024",
     },
     {
       id: "recursive-flora",
@@ -30,7 +31,9 @@ const Work = () => {
       description:
         "A data-driven, co-created zine and website exploring overthinking, translating emotional complexity into shared understanding.",
       assetUrl:
-        "https://framerusercontent.com/images/dPADpyV0fv6eu8MWeQ5ItdDBQ.jpg?scale-down-to=512&width=5400&height=4320 512w,https://framerusercontent.com/images/dPADpyV0fv6eu8MWeQ5ItdDBQ.jpg?scale-down-to=1024&width=5400&height=4320 1024w,https://framerusercontent.com/images/dPADpyV0fv6eu8MWeQ5ItdDBQ.jpg?scale-down-to=2048&width=5400&height=4320 2048w,https://framerusercontent.com/images/dPADpyV0fv6eu8MWeQ5ItdDBQ.jpg?scale-down-to=4096&width=5400&height=4320 4096w,https://framerusercontent.com/images/dPADpyV0fv6eu8MWeQ5ItdDBQ.jpg?width=5400&height=4320 5400w",
+        "https://framerusercontent.com/images/dPADpyV0fv6eu8MWeQ5ItdDBQ.jpg?scale-down-to=512 512w, https://framerusercontent.com/images/dPADpyV0fv6eu8MWeQ5ItdDBQ.jpg?scale-down-to=1024 1024w, https://framerusercontent.com/images/dPADpyV0fv6eu8MWeQ5ItdDBQ.jpg?scale-down-to=2048 2048w",
+      assetFallback:
+        "https://framerusercontent.com/images/dPADpyV0fv6eu8MWeQ5ItdDBQ.jpg?scale-down-to=1024",
     },
     {
       id: "noelle",
@@ -44,7 +47,9 @@ const Work = () => {
       description:
         "noelle helps designers resurface saved resources at the right moment, and find patterns so taste stops being a feeling and starts being a language.",
       assetUrl:
-        "https://framerusercontent.com/images/dPADpyV0fv6eu8MWeQ5ItdDBQ.jpg?scale-down-to=512&width=5400&height=4320 512w,https://framerusercontent.com/images/dPADpyV0fv6eu8MWeQ5ItdDBQ.jpg?scale-down-to=1024&width=5400&height=4320 1024w,https://framerusercontent.com/images/dPADpyV0fv6eu8MWeQ5ItdDBQ.jpg?scale-down-to=2048&width=5400&height=4320 2048w,https://framerusercontent.com/images/dPADpyV0fv6eu8MWeQ5ItdDBQ.jpg?scale-down-to=4096&width=5400&height=4320 4096w,https://framerusercontent.com/images/dPADpyV0fv6eu8MWeQ5ItdDBQ.jpg?width=5400&height=4320 5400w",
+        "https://framerusercontent.com/images/dPADpyV0fv6eu8MWeQ5ItdDBQ.jpg?scale-down-to=512 512w, https://framerusercontent.com/images/dPADpyV0fv6eu8MWeQ5ItdDBQ.jpg?scale-down-to=1024 1024w, https://framerusercontent.com/images/dPADpyV0fv6eu8MWeQ5ItdDBQ.jpg?scale-down-to=2048 2048w",
+      assetFallback:
+        "https://framerusercontent.com/images/dPADpyV0fv6eu8MWeQ5ItdDBQ.jpg?scale-down-to=1024",
     },
     {
       id: "pratt-portal",
@@ -54,22 +59,27 @@ const Work = () => {
       description:
         "Usability testing and design recommendations for Pratt's universal student/staff portal. Focused on introducing progressive disclosure for the printing feature.",
       assetUrl:
-        "https://framerusercontent.com/images/LR5IhTh64gEzMH9A2C9Gbeprs0.png?scale-down-to=512&width=5400&height=4320 512w,https://framerusercontent.com/images/LR5IhTh64gEzMH9A2C9Gbeprs0.png?scale-down-to=1024&width=5400&height=4320 1024w,https://framerusercontent.com/images/LR5IhTh64gEzMH9A2C9Gbeprs0.png?scale-down-to=2048&width=5400&height=4320 2048w,https://framerusercontent.com/images/LR5IhTh64gEzMH9A2C9Gbeprs0.png?scale-down-to=4096&width=5400&height=4320 4096w,https://framerusercontent.com/images/LR5IhTh64gEzMH9A2C9Gbeprs0.png?width=5400&height=4320 5400w",
+        "https://framerusercontent.com/images/LR5IhTh64gEzMH9A2C9Gbeprs0.png?scale-down-to=512 512w, https://framerusercontent.com/images/LR5IhTh64gEzMH9A2C9Gbeprs0.png?scale-down-to=1024 1024w, https://framerusercontent.com/images/LR5IhTh64gEzMH9A2C9Gbeprs0.png?scale-down-to=2048 2048w",
+      assetFallback:
+        "https://framerusercontent.com/images/LR5IhTh64gEzMH9A2C9Gbeprs0.png?scale-down-to=1024",
     },
   ];
 
-
   return (
-    <section id='work'>
+    <section id="work">
       <div className="title">featured Work</div>
-
-      <div className='grid-layout'>
+      <div className="grid-layout">
         {constants.map((item) => (
-          <div>
+          <div key={item.id}>
             <div className="img">
-              <img src={item.assetUrl} />
+              <img
+                srcSet={item.assetUrl}
+                src={item.assetFallback}
+                alt={item.title}
+                loading="lazy"
+                sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 45vw"
+              />
             </div>
-            
             <div className="content">
               <h1>{item.title}</h1>
               <h2>{item.tags}</h2>
@@ -80,6 +90,6 @@ const Work = () => {
       </div>
     </section>
   );
-}
+};
 
-export default Work
+export default Work;

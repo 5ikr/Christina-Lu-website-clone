@@ -1,32 +1,71 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
-@import "tailwindcss";
 
-*{
+/* ==========================================================================
+   RESET
+   ========================================================================== */
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-nav{
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ==========================================================================
+   DESIGN TOKENS
+   ========================================================================== */
+:root {
+  --bg: #f8f8fa;
+  --border: #eeedee;
+  --text-muted: #999898;
+  --text-body: #696969;
+  --text-dark: #383838;
+  --text-black: #272524;
+  --footer-bg: #EBEEF4;
+  --font-serif: "Cormorant Garamond", serif;
+  --font-sans: "Plus Jakarta Sans", sans-serif;
+  --font-open: "Open Sans", sans-serif;
+
+  /* Spacing scale — change these two values to rescale the whole layout */
+  --px-desktop: 125px;
+  --px-tablet: 48px;
+  --px-mobile: 20px;
+}
+
+/* ==========================================================================
+   NAVBAR
+   ========================================================================== */
+nav {
   position: fixed;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: var(--font-sans);
   width: 100%;
   height: 50px;
-  border-bottom: 1px solid #eeedee;
-  -webkit-backdrop-filter: blur(10px);
-  padding: 0px 125px;
+  border-bottom: 1px solid var(--border);
+  padding: 0 var(--px-desktop);
   font-size: 13px;
-  color: #999898;
+  color: var(--text-muted);
   z-index: 100;
   font-weight: 500;
-  background-color: rgba(248, 248, 250, 0.781);
+  background-color: rgba(248, 248, 250, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
 
-ul{
+nav ul {
   width: 100%;
   height: 100%;
   display: flex;
@@ -34,163 +73,262 @@ ul{
   justify-content: space-between;
 }
 
-.right{
+.right {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: 2rem;
 }
 
-nav ul div li a{
+nav ul div li a {
   letter-spacing: -0.25px;
-  transition: all ease-in-out 0.1s;
+  transition: color 0.1s ease-in-out;
 }
 
-nav ul div li a:hover{
-  text-decoration: none;
-  color: #272524;
+nav ul div li a:hover {
+  color: var(--text-black);
 }
 
-#Hero{
+/* Mobile nav — hamburger-free approach: keep all links, shrink gap */
+@media (max-width: 480px) {
+  nav {
+    padding: 0 var(--px-mobile);
+    height: 44px;
+    font-size: 12px;
+  }
+  .right {
+    gap: 1rem;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  nav {
+    padding: 0 var(--px-tablet);
+    font-size: 12.5px;
+  }
+  .right {
+    gap: 1.25rem;
+  }
+}
+
+/* ==========================================================================
+   HERO
+   ========================================================================== */
+#Hero {
   width: 100%;
-  background-color: #f8f8fa;
-  height: 50vh;
+  background-color: var(--bg);
+  min-height: 50vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0px 125px;
+  padding: 80px var(--px-desktop) 40px;
 }
 
-
-#Hero .title{
-  font-family: "Cormorant Garamond", serif;
-  font-weight: lighter;
+#Hero .title {
+  font-family: var(--font-serif);
+  font-weight: 300;
   font-style: italic;
-  font-size: 90px;
+  /* fluid: 48px → 90px */
+  font-size: clamp(3rem, 8vw, 5.625rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
 }
 
-.para{
-  font-size: 18px;
-  margin-top: -30px;
-  color: #696969;
-  font-family: "Plus Jakarta Sans", sans-serif;
+.para {
+  /* fluid: 14px → 18px */
+  font-size: clamp(0.875rem, 1.5vw, 1.125rem);
+  margin-top: clamp(6px, 1vw, 14px);
+  color: var(--text-body);
+  font-family: var(--font-sans);
   letter-spacing: -0.5px;
+  max-width: 600px;
+  line-height: 1.55;
 }
 
-#work{
+@media (max-width: 480px) {
+  #Hero {
+    padding: 74px var(--px-mobile) 36px;
+    min-height: 44vh;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  #Hero {
+    padding: 74px var(--px-tablet) 36px;
+    min-height: 40vh;
+  }
+}
+
+/* ==========================================================================
+   WORK SECTION
+   ========================================================================== */
+#work {
   width: 100%;
-  height: 100%;
-  padding: 0px 125px;
-  background: #f8f8fa;
+  padding: 40px var(--px-desktop);
+  background: var(--bg);
 }
 
-#work .title, #critiques .title{
+#work .title,
+#critiques .title {
   font-size: 13px;
-  color: #999898;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  margin-bottom: 6px;
+  color: var(--text-muted);
+  font-family: var(--font-sans);
+  margin-bottom: 24px;
 }
 
-.grid-layout{
+/* 2-column grid on desktop */
+.grid-layout {
   width: 100%;
-  z-index: -99;
   display: grid;
-  grid-template-columns: 50% 50%;
-  grid-template-rows: 50% 50%;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px 40px;
 }
 
-.grid-layout p{
-    margin-bottom: 70px;
+.grid-layout .img img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  transition: opacity 0.2s ease-in-out, border-radius 0.2s ease-in-out;
 }
 
-.grid-layout .img img{
-  outline: none;
-}
-
-.grid-layout .img img:hover{
+.grid-layout .img img:hover {
   opacity: 0.4;
-  outline: none;
   border-radius: 30px;
-  transition: all ease-in-out 0.2s;
 }
 
-.grid-layout h1{
-  margin-top: 10px;
+.grid-layout h1 {
+  margin-top: 12px;
   font-family: "Open Sans", sans-serif;
-  font-size: 1.5rem;
-  letter-spacing: -0.09rem;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  letter-spacing: -0.05em;
   color: #383838;
+  font-weight: normal;
+  line-height: 1.3;
 }
 
-.grid-layout h2{
+.grid-layout h2 {
   color: #c9c8c8;
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 13px;
+  font-size: 12px;
+  margin-top: 6px;
+  line-height: 1.5;
+  font-weight: normal;
 }
 
-.grid-layout p{
+.grid-layout p {
   color: #979797;
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;;
   font-size: 13px;
-  margin-top: 7px;
+  margin-top: 8px;
+  line-height: 1.6;
 }
 
-#critiques{
+/* Tablet: 2 columns but tighter */
+@media (max-width: 768px) {
+  #work {
+    padding: 36px var(--px-tablet);
+  }
+  .grid-layout {
+    gap: 36px 24px;
+  }
+}
+
+/* Mobile: single column */
+@media (max-width: 480px) {
+  #work {
+    padding: 32px var(--px-mobile);
+  }
+  .grid-layout {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+}
+
+/* ==========================================================================
+   CRITIQUES SECTION
+   ========================================================================== */
+#critiques {
   width: 100%;
-  height: auto;
-  padding: 50px 125px;
-  background: #f8f8fa;
+  padding: 50px var(--px-desktop);
+  background: var(--bg);
 }
 
-#critiques .content-div{
+#critiques .content-div {
   display: flex;
-  height: auto;
-  width: 100%;
   flex-direction: column;
-  gap: 30px;
+  gap: 0;
 }
 
-#critiques .content-div .content{
+#critiques .content-div .content {
   width: 100%;
   display: grid;
-  border-bottom: 1px solid #eeedee;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 40px;
+  border-bottom: 1px solid var(--border);
+  padding: 24px 0;
 }
 
-#critiques .content-div .content:last-child{
+#critiques .content-div .content:first-child {
+  padding-top: 0;
+}
+
+#critiques .content-div .content:last-child {
   border-bottom: none;
 }
 
-#critiques .content-div .content .p p{
+#critiques .content-div .content .p p {
   color: #979797;
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: var(--font-sans);
   font-size: 13px;
-  margin-bottom: 30px;
+  line-height: 1.65;
 }
 
-#critiques .content-div .content .h1 h1{
+#critiques .content-div .content .h1 h1 {
   cursor: pointer;
-  margin-top: 10px;
-  font-family: "Open Sans", sans-serif;
-  font-size: 1.2rem;
-  letter-spacing: -0.07rem;
+  font-family: var(--font-open);
+  font-size: clamp(0.95rem, 1.8vw, 1.2rem);
+  letter-spacing: -0.04em;
   color: #6e6e6e;
   font-weight: normal;
-  width: 100%;
   text-decoration: underline;
-  text-decoration-style: dashed;    
-  text-decoration-color: #b0b0b0;   
+  text-decoration-style: dashed;
+  text-decoration-color: #b0b0b0;
   text-decoration-thickness: 1px;
   text-underline-offset: 6px;
-  transition: all ease-in-out 0.1s;
+  transition: all 0.1s ease-in-out;
+  line-height: 1.4;
 }
 
-#critiques .content-div .content .h1 h1:hover{
+#critiques .content-div .content .h1 h1:hover {
   text-decoration-style: solid;
   text-decoration-color: #242424;
   color: #242424;
 }
 
+/* Tablet: keep 2-col but tighter padding */
+@media (max-width: 768px) {
+  #critiques {
+    padding: 40px var(--px-tablet);
+  }
+  #critiques .content-div .content {
+    gap: 12px 24px;
+  }
+}
+
+/* Mobile: stack title above description */
+@media (max-width: 480px) {
+  #critiques {
+    padding: 32px var(--px-mobile);
+  }
+  #critiques .content-div .content {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 20px 0;
+  }
+}
+
+/* ==========================================================================
+   TOOLTIP
+   ========================================================================== */
 .tooltip-wrapper {
   position: relative;
   display: inline-block;
@@ -203,21 +341,21 @@ nav ul div li a:hover{
   top: var(--mouse-y);
   transform: translate(-50%, -130%) scale(0.9);
   color: #555555;
-  max-width: 400px;
-  font-family: 'Inter', sans-serif;
-  font-size: 0.85rem;
+  max-width: 340px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.82rem;
   padding: 6px 16px;
   border-radius: 7px;
-  border: 1px dashed #cccccc; 
-  white-space: nowrap;
-  pointer-events: none; 
+  border: 1px dashed #cccccc;
+  pointer-events: none;
   opacity: 0;
   transition: opacity 0.2s ease, transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   z-index: 9999;
-  background-color: rgba(248, 248, 250, 0.349);
+  background-color: rgba(248, 248, 250, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   white-space: normal;
+  line-height: 1.5;
 }
 
 .custom-tooltip.visible {
@@ -225,128 +363,113 @@ nav ul div li a:hover{
   transform: translate(-50%, -130%) scale(1);
 }
 
-#footer{
-  background: #EBEEF4;
-  padding: 20px 125px;
+/* Hide tooltip on touch devices (no hover) */
+@media (hover: none) {
+  .custom-tooltip {
+    display: none !important;
+  }
+}
+
+/* Smaller tooltip on narrow screens */
+@media (max-width: 480px) {
+  .custom-tooltip {
+    max-width: 220px;
+    font-size: 0.78rem;
+    padding: 5px 10px;
+  }
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+#footer {
+  background: var(--footer-bg);
+  padding: 24px var(--px-desktop) 40px;
   display: flex;
   flex-direction: column;
-  gap: 100px;
+  gap: 60px;
 }
 
 #footer ul {
-  font-size: 14px;
-  color: #979797;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-}
-
-#footer ul .others{
+  font-size: 13px;
+  color: var(--text-muted);
+  font-family: var(--font-sans);
   display: flex;
   align-items: center;
-  gap: 30px;
+  justify-content: space-between;
 }
 
-#footer a:hover{
-  text-decoration: none;
-  color: #272524;
-  transition: all ease-in-out 0.1s;
+#footer ul .others {
+  display: flex;
+  align-items: center;
+  gap: 24px;
 }
 
-#footer img{
-  width: 70px; 
-  aspect-ratio: 0.332303 / 1; 
-  transform: rotate(-5deg); 
-  opacity: 1;
+#footer a:hover {
+  color: var(--text-black);
+  transition: color 0.1s ease-in-out;
 }
 
-#footer .hover-img{
+#footer img {
+  width: 70px;
+  aspect-ratio: 0.3323 / 1;
+  transform: rotate(-5deg);
+}
+
+#footer .hover-img {
   will-change: transform;
-  opacity: 1;
-  transform: none;
-  transition: all ease-in-out 0.2s;
+  transition: transform 0.2s ease-in-out;
 }
 
-#footer .hover-img:hover{
+#footer .hover-img:hover {
   transform: translateX(-10px) scale(1.1) rotate(-5deg);
 }
 
-#footer .content{
+#footer .content {
   width: 100%;
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: 40px;
+  gap: 16px;
 }
 
-#footer .content p{
+#footer .content p {
   width: 150px;
   text-align: center;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 14px;
-  color: #696969;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: var(--text-body);
+  line-height: 1.5;
 }
 
-/* ==========================================================================
-   RESPONSIVE LAYOUT STYLES
-   ========================================================================== */
-
-/* Clean Fluid Typography for headings across all devices */
-.project-link-underlined,
-.project-title {
-  font-size: clamp(1.2rem, 4vw, 1.65rem); /* Dynamically scales between 19px and 26px */
+/* Tablet footer */
+@media (max-width: 768px) {
+  #footer {
+    padding: 24px var(--px-tablet) 36px;
+    gap: 40px;
+  }
+  #footer ul .others {
+    gap: 16px;
+  }
 }
 
-.project-desc {
-  font-size: clamp(0.9rem, 2.5vw, 1.05rem);
-}
-
-/* Global Grid System handling rows fluidly */
-.project-row {
-  display: flex;
-  flex-direction: column; /* Stack details vertically on small viewports */
-  gap: 12px;
-  padding: 24px 0;
-}
-
-@media (min-width: 768px) {
-  .project-row {
-    flex-direction: row; /* Switch back to side-by-side on desktop */
-    justify-content: space-between;
+/* Mobile footer */
+@media (max-width: 480px) {
+  #footer {
+    padding: 20px var(--px-mobile) 32px;
+    gap: 32px;
+  }
+  #footer ul {
+    flex-direction: column;
     align-items: flex-start;
+    gap: 12px;
   }
-}
-
-/* ==========================================================================
-   MOBILE DEVICES CORRECTIONS (Screens under 768px wide)
-   ========================================================================== */
-@media (max-width: 767px) {
-  /* 1. Scale down Navigation Bar structure without changing layout */
-  header {
-    padding: 14px 20px !important; /* Shorter header height and tighter side padding */
+  #footer ul .others {
+    gap: 14px;
+    flex-wrap: wrap;
   }
-
-  /* 2. Shrink Navigation Content sizes */
-  .nav-logo, 
-  .nav-links a {
-    font-size: 13px !important;   /* Crisper, compact text */
-    letter-spacing: -0.01em;
-  }
-
-  .nav-links {
-    gap: 16px !important;         /* Tighten gap between links so they fit on one line */
-  }
-
-  /* 3. Hide the Footer Illustration completely */
-  /* (Assuming your footer container uses an 'img' tag or a dedicated class name) */
-  footer img,
-  .footer-illustration-container,
-  .footer-image { 
-    display: none !important; 
-  }
-  
-  /* Adjust custom tooltip sizing to fit narrow touch screen bounds */
-  .custom-tooltip {
-    max-width: 220px;
-    font-size: 0.8rem;
-    padding: 6px 12px;
-  }
+  /* Optionally hide the decorative illustration on very small screens */
+  /* Uncomment if needed:
+  #footer .content { display: none; }
+  */
 }
