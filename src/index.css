@@ -284,3 +284,69 @@ nav ul div li a:hover{
   font-size: 14px;
   color: #696969;
 }
+
+/* ==========================================================================
+   RESPONSIVE LAYOUT STYLES
+   ========================================================================== */
+
+/* Clean Fluid Typography for headings across all devices */
+.project-link-underlined,
+.project-title {
+  font-size: clamp(1.2rem, 4vw, 1.65rem); /* Dynamically scales between 19px and 26px */
+}
+
+.project-desc {
+  font-size: clamp(0.9rem, 2.5vw, 1.05rem);
+}
+
+/* Global Grid System handling rows fluidly */
+.project-row {
+  display: flex;
+  flex-direction: column; /* Stack details vertically on small viewports */
+  gap: 12px;
+  padding: 24px 0;
+}
+
+@media (min-width: 768px) {
+  .project-row {
+    flex-direction: row; /* Switch back to side-by-side on desktop */
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+
+/* ==========================================================================
+   MOBILE DEVICES CORRECTIONS (Screens under 768px wide)
+   ========================================================================== */
+@media (max-width: 767px) {
+  /* 1. Scale down Navigation Bar structure without changing layout */
+  header {
+    padding: 14px 20px !important; /* Shorter header height and tighter side padding */
+  }
+
+  /* 2. Shrink Navigation Content sizes */
+  .nav-logo, 
+  .nav-links a {
+    font-size: 13px !important;   /* Crisper, compact text */
+    letter-spacing: -0.01em;
+  }
+
+  .nav-links {
+    gap: 16px !important;         /* Tighten gap between links so they fit on one line */
+  }
+
+  /* 3. Hide the Footer Illustration completely */
+  /* (Assuming your footer container uses an 'img' tag or a dedicated class name) */
+  footer img,
+  .footer-illustration-container,
+  .footer-image { 
+    display: none !important; 
+  }
+  
+  /* Adjust custom tooltip sizing to fit narrow touch screen bounds */
+  .custom-tooltip {
+    max-width: 220px;
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+}

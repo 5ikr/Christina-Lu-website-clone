@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import './ExternalLink.css';
 
 // 1. Ensure curly braces are around the parameters
 const ExternalLink = ({ href, children, tooltipText }) => {
