@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+@import "tailwindcss";
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+nav{
+  position: fixed;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  width: 100%;
+  height: 50px;
+  border-bottom: 1px solid #eeedee;
+  -webkit-backdrop-filter: blur(10px);
+  padding: 0px 125px;
+  font-size: 13px;
+  color: #999898;
+  z-index: 100;
+  font-weight: 500;
+  background-color: rgba(248, 248, 250, 0.781);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+ul{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.right{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+nav ul div li a{
+  letter-spacing: -0.25px;
+  transition: all ease-in-out 0.1s;
+}
+
+nav ul div li a:hover{
+  text-decoration: none;
+  color: #272524;
+}
+
+#Hero{
+  width: 100%;
+  background-color: #f8f8fa;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0px 125px;
+}
+
+
+#Hero .title{
+  font-family: "Cormorant Garamond", serif;
+  font-weight: lighter;
+  font-style: italic;
+  font-size: 90px;
+}
+
+.para{
+  font-size: 18px;
+  margin-top: -30px;
+  color: #696969;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  letter-spacing: -0.5px;
+}
+
+#work{
+  width: 100%;
+  height: 100%;
+  padding: 0px 125px;
+  background: #f8f8fa;
+}
+
+#work .title, #critiques .title{
+  font-size: 13px;
+  color: #999898;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  margin-bottom: 6px;
+}
+
+.grid-layout{
+  width: 100%;
+  z-index: -99;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 50% 50%;
+}
+
+.grid-layout p{
+    margin-bottom: 70px;
+}
+
+.grid-layout .img img{
+  outline: none;
+}
+
+.grid-layout .img img:hover{
+  opacity: 0.4;
+  outline: none;
+  border-radius: 30px;
+  transition: all ease-in-out 0.2s;
+}
+
+.grid-layout h1{
+  margin-top: 10px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: -0.09rem;
+  color: #383838;
+}
+
+.grid-layout h2{
+  color: #c9c8c8;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 13px;
+}
+
+.grid-layout p{
+  color: #979797;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 13px;
+  margin-top: 7px;
+}
+
+#critiques{
+  width: 100%;
+  height: auto;
+  padding: 50px 125px;
+  background: #f8f8fa;
+}
+
+#critiques .content-div{
+  display: flex;
+  height: auto;
+  width: 100%;
+  flex-direction: column;
+  gap: 30px;
+}
+
+#critiques .content-div .content{
+  width: 100%;
+  display: grid;
+  border-bottom: 1px solid #eeedee;
+  grid-template-columns: 50% 50%;
+}
+
+#critiques .content-div .content:last-child{
+  border-bottom: none;
+}
+
+#critiques .content-div .content .p p{
+  color: #979797;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 13px;
+  margin-bottom: 30px;
+}
+
+#critiques .content-div .content .h1 h1{
+  cursor: pointer;
+  margin-top: 10px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: -0.07rem;
+  color: #6e6e6e;
+  font-weight: normal;
+  width: 100%;
+  text-decoration: underline;
+  text-decoration-style: dashed;    
+  text-decoration-color: #b0b0b0;   
+  text-decoration-thickness: 1px;
+  text-underline-offset: 6px;
+  transition: all ease-in-out 0.1s;
+}
+
+#critiques .content-div .content .h1 h1:hover{
+  text-decoration-style: solid;
+  text-decoration-color: #242424;
+  color: #242424;
+}
+
+.tooltip-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.custom-tooltip {
+  display: flex;
+  position: fixed;
+  left: var(--mouse-x);
+  top: var(--mouse-y);
+  transform: translate(-50%, -130%) scale(0.9);
+  color: #555555;
+  max-width: 400px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  padding: 6px 16px;
+  border-radius: 7px;
+  border: 1px dashed #cccccc; 
+  white-space: nowrap;
+  pointer-events: none; 
+  opacity: 0;
+  transition: opacity 0.2s ease, transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 9999;
+  background-color: rgba(248, 248, 250, 0.349);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  white-space: normal;
+}
+
+.custom-tooltip.visible {
+  opacity: 1;
+  transform: translate(-50%, -130%) scale(1);
+}
+
+#footer{
+  background: #EBEEF4;
+  padding: 20px 125px;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+}
+
+#footer ul {
+  font-size: 14px;
+  color: #979797;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+#footer ul .others{
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+#footer a:hover{
+  text-decoration: none;
+  color: #272524;
+  transition: all ease-in-out 0.1s;
+}
+
+#footer img{
+  width: 70px; 
+  aspect-ratio: 0.332303 / 1; 
+  transform: rotate(-5deg); 
+  opacity: 1;
+}
+
+#footer .hover-img{
+  will-change: transform;
+  opacity: 1;
+  transform: none;
+  transition: all ease-in-out 0.2s;
+}
+
+#footer .hover-img:hover{
+  transform: translateX(-10px) scale(1.1) rotate(-5deg);
+}
+
+#footer .content{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+}
+
+#footer .content p{
+  width: 150px;
+  text-align: center;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 14px;
+  color: #696969;
+}
